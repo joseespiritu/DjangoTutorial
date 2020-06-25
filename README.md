@@ -12,3 +12,6 @@ Django Tutorial Full Course From Documentation
 *  Command Line: _django-admin startproject mysite_ in the path our venv
 * ### Create an App in our project:
 *  To create your app, make sure you’re in the same directory as manage.py and type this command: _python manage.py startapp polls_
+* ### Create Database:
+*  In this project we use SQLite3, into _mysite/settings.py_ check the parameters by default set with SQLite 3, not is necesary NAME, HOST, PASSWORD
+*  Run the command: _python manage.py migrate_ to create Database
