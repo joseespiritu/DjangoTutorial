@@ -70,3 +70,10 @@ Django Tutorial Full Course From Documentation
 *   ``` #Delete one of the choices ```
 *   ``` c = q.choice_set.filter(choice_text__startswith='Just hacking') ```
 *   ``` c.delete() ```
+
+* ### Create an Admin User
+*  To create an admin user run the command: _py manage.py createsuperuser_
+*  Insert the name user: _joseespiritu_
+*  Insert the email user: _jlmeico@outlook.com_
+*  Insert a password: @********s5
+*  You can acces to admin page in the url: _127.0.0.1:8000/admin/_
