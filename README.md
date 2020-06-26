@@ -32,17 +32,17 @@ Django Tutorial Full Course From Documentation
 * ### Interactive with the API
 *  To run the Interactive python console with the API run the command: _python manage.py shell_
 *  ### Some commands in the API:
-*   ``` from polls.models import Choice, Question #Import Model ```
-*   ``` Question.object.all() ```
-*   ``` #Create a question ```
-*   ``` from django.utils import timezone ```
-*   ``` q = Question(question_text="What's new?", pub_date=timezone.now()) ```
-*   ``` q.save() #Save the question ```
-*   ``` q.id #Id question ```
-*   ``` q.question_text #Acces to field ```
-*   ``` q.pub_date #Acces to date ```
-*   ``` q.question_text = "What's up?" #Change value of question text ```
-*   ``` q.save() = "What's up?" #Update question_text ```
+*   ``` from polls.models import Choice, Question #Import Model 
+        Question.object.all()
+        #Create a question
+        from django.utils import timezone
+        q = Question(question_text="What's new?", pub_date=timezone.now())
+        q.save() #Save the question
+        q.id #Id question
+        q.question_text #Acces to field
+        q.pub_date #Acces to date
+        q.question_text = "What's up?" #Change value of question text
+        q.save() = "What's up?" #Update question_text ```
 *   At this point include the function __str__() and was_published_recently and is necesary to restart the python shell after the changes
 *   ``` #Make sure our __str__() addition worked. ```
 *   ``` Question.objects.all() ```
