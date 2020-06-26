@@ -32,44 +32,49 @@ Django Tutorial Full Course From Documentation
 * ### Interactive with the API
 *  To run the Interactive python console with the API run the command: _python manage.py shell_
 *  ### Some commands in the API:
-*   ``` from polls.models import Choice, Question #Import Model 
+    ``` from polls.models import Choice, Question #Import Model 
         Question.object.all()
         #Create a question
         from django.utils import timezone
         q = Question(question_text="What's new?", pub_date=timezone.now())
+        
         q.save() #Save the question
         q.id #Id question
         q.question_text #Acces to field
         q.pub_date #Acces to date
         q.question_text = "What's up?" #Change value of question text
         q.save() = "What's up?" #Update question_text ```
-*   At this point include the function __str__() and was_published_recently and is necesary to restart the python shell after the changes
-*   ``` #Make sure our __str__() addition worked. ```
-*   ``` Question.objects.all() ```
-*   ``` #Some keyword arguments ```
-*   ``` Question.objects.filter(id=1) ```
-*   ``` Question.objects.filter(question_text__startswith='What') ```
-*   ``` from django.utils import timezone ```
-*   ``` current_year = timezone.now().year ```
-*   ``` Question.objects.get(pub_date__year=current_year) ```
-*   ``` #Get the data by the primary key ```
-*   ``` Question.objects.get(pk=1) ```
-*   ``` q = Question.objects.get(pk=1) ```
-*   ``` q.was_published_recently() #Make sure our custom method worked ```
-*   ``` #To create a choices ```
-*   ``` q = Question.objects.get(pk=1) ```
-*   ``` q.choice_set.all() ```
-*   ``` q.choice_set.create(choice_text='Not much', votes=0) ```
-*   ``` q.choice_set.create(choice_text='The sky', votes=0) ```
-*   ``` c = q.choice_set.create(choice_text='Just hacking again', votes=0) ```
-*   ``` c.question ```
-*   ``` #Question objects get access to Choice objects ```
-*   ``` q.choice_set.all() ```
-*   ``` q.choice_set.count() ```
-*   ``` Choice.objects.filter(question__pub_date__year=current_year) ```
-*   ``` #Delete one of the choices ```
-*   ``` c = q.choice_set.filter(choice_text__startswith='Just hacking') ```
-*   ``` c.delete() ```
+*  At this point include the function __str__() and was_published_recently and is necesary to restart the python shell after the changes
+*   ``` #Make sure our __str__() addition worked.
+        Question.objects.all()
+
+        #Some keyword arguments
+        Question.objects.filter(id=1)
+        Question.objects.filter(question_text__startswith='What')
+        from django.utils import timezone
+        current_year = timezone.now().year
+        Question.objects.get(pub_date__year=current_year)
+
+        #Get the data by the primary key
+        Question.objects.get(pk=1)
+        q = Question.objects.get(pk=1)
+        q.was_published_recently() #Make sure our custom method worked
+
+        #To create a choices
+        q = Question.objects.get(pk=1)
+        q.choice_set.all()
+        q.choice_set.create(choice_text='Not much', votes=0)
+        q.choice_set.create(choice_text='The sky', votes=0)
+        c = q.choice_set.create(choice_text='Just hacking again', votes=0)
+        c.question
+
+        #Question objects get access to Choice objects
+        q.choice_set.all()
+        q.choice_set.count()
+        Choice.objects.filter(question__pub_date__year=current_year)
+        #Delete one of the choices
+        c = q.choice_set.filter(choice_text__startswith='Just hacking')
+        c.delete() ```
 
 * ### Create an Admin User
 *  To create an admin user run the command: _py manage.py createsuperuser_
